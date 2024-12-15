@@ -1,0 +1,60 @@
+# Gradle-specific files
+.gradle/
+build/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE-specific files
+*.iml
+.idea/
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dependency caches
+**/out/
+.gradle/
+!gradle-wrapper.jar
+
+# Java-specific files
+*.jar
+*.war
+*.ear
+
+# Maven POM file backup
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# Module builds
+bin/
+target/
+dist/
+generated/
+
+# Eclipse-specific files
+*.pydevproject
+.project
+.settings/
+
+# NetBeans-specific files
+nbproject/private/
+build/
+nbbuild/
+dist/
+.nbm/
+
+# IntelliJ IDEA-specific files
+out/
+.idea/
