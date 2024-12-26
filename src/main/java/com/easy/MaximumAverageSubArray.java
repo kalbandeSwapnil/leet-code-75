@@ -25,6 +25,7 @@ n == nums.length
 1 <= k <= n <= 105
 -104 <= nums[i] <= 104
  */
+
 public class MaximumAverageSubArray {
 
     public double findMaxAverage(int[] nums, int k) {
