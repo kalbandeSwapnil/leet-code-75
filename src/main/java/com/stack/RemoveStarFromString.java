@@ -42,27 +42,54 @@ The operation above can be performed on s.
  */
 public class RemoveStarFromString {
 
-    public String removeStars(String s) {
+    public String removeStarsWithStack(String s) {
         Stack<Character> stack = new Stack<>();
+
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '*') {
+
                 stack.pop();
             } else {
+
                 stack.push(s.charAt(i));
             }
         }
-
         StringBuilder sb = new StringBuilder();
 
         while (!stack.isEmpty()) {
             sb.append(stack.pop());
         }
         sb.reverse();
-
         String result = sb.toString();
-
         return result;
+    }
 
+
+    public String removeStarsWithSlowPointer(String s) {
+
+        char[] output = new char[s.length()];
+        int slowIndex = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '*') {
+                slowIndex--;
+
+            } else {
+                output[slowIndex++] = s.charAt(i);
+
+            }
+        }
+        return new String(output).substring(0, slowIndex);
+
+
+    }
+
+    public static void main(String[] args) {
+        String s = "leet**cod*e";
+
+        RemoveStarFromString solution = new RemoveStarFromString();
+
+        System.out.println(" --output :" + solution.removeStarsWithSlowPointer(s));
+        System.out.println(" --output :" + solution.removeStarsWithStack(s));
 
     }
 }
