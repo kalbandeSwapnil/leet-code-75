@@ -87,53 +87,70 @@ public class LinkedList {
 
         return head;
     }
-/*
 
-328. Odd Even Linked List
+    /*
 
-Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.
+    328. Odd Even Linked List
 
-The first node is considered odd, and the second node is even, and so on.
+    Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.
 
-Note that the relative order inside both the even and odd groups should remain as it was in the input.
+    The first node is considered odd, and the second node is even, and so on.
 
-You must solve the problem in O(1) extra space complexity and O(n) time complexity.
+    Note that the relative order inside both the even and odd groups should remain as it was in the input.
 
-
-
-Example 1:
+    You must solve the problem in O(1) extra space complexity and O(n) time complexity.
 
 
-Input: head = [1,2,3,4,5]
-Output: [1,3,5,2,4]
-Example 2:
+
+    Example 1:
 
 
-Input: head = [2,1,3,5,6,4,7]
-Output: [2,3,6,7,1,5,4]
- */
+    Input: head = [1,2,3,4,5]
+    Output: [1,3,5,2,4]
+    Example 2:
+
+
+    Input: head = [2,1,3,5,6,4,7]
+    Output: [2,3,6,7,1,5,4]
+     */
     public ListNode oddEvenList(ListNode head) {
         if (head == null || head.next == null) {
-            return head; // No reordering needed for empty or single-node lists
+            return head;
         }
 
-        // Initialize pointers
+
         ListNode odd = head;
         ListNode even = head.next;
-        ListNode evenHead = even; // Save the head of the even list
+        ListNode evenHead = even;
 
-        // Traverse and rearrange nodes
+
         while (even != null && even.next != null) {
-            odd.next = even.next; // Link odd nodes
+            odd.next = even.next;
             odd = odd.next;
 
-            even.next = odd.next; // Link even nodes
+            even.next = odd.next;
             even = even.next;
         }
 
         // Connect the odd list to the even list
         odd.next = evenHead;
 
+        return head;
+    }
+
+// 206. Reverse Linked List    Given the head of a singly linked list, reverse the list, and return the reversed list.
+    public ListNode reverse(ListNode head) {
+        ListNode previous = null;
+        ListNode current = head;
+        ListNode next = null;
+
+        while (current != null) {
+            next = current.next; // Save the next node
+            current.next = previous; // Reverse the link
+            previous = current; // Move previous one step forward
+            current = next; // Move current one step forward
+        }
+        head = previous; // Update the head to the last node
         return head;
     }
 
@@ -160,7 +177,6 @@ Output: [2,3,6,7,1,5,4]
         printList(head);
 
 
-
         /// Odd even
 
         // Example 1: [1,2,3,4,5]
@@ -178,6 +194,14 @@ Output: [2,3,6,7,1,5,4]
         ListNode result2 = solution.oddEvenList(head2);
         System.out.println("Reordered List:");
         printList(result2);
+
+
+        System.out.println("Original List:");
+        printList(head2);
+        ListNode result3 = solution.reverse(head2);
+        System.out.println("reverse List:");
+        printList(result3);
+
     }
 
 }
