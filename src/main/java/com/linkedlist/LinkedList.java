@@ -87,6 +87,55 @@ public class LinkedList {
 
         return head;
     }
+/*
+
+328. Odd Even Linked List
+
+Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.
+
+The first node is considered odd, and the second node is even, and so on.
+
+Note that the relative order inside both the even and odd groups should remain as it was in the input.
+
+You must solve the problem in O(1) extra space complexity and O(n) time complexity.
+
+
+
+Example 1:
+
+
+Input: head = [1,2,3,4,5]
+Output: [1,3,5,2,4]
+Example 2:
+
+
+Input: head = [2,1,3,5,6,4,7]
+Output: [2,3,6,7,1,5,4]
+ */
+    public ListNode oddEvenList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head; // No reordering needed for empty or single-node lists
+        }
+
+        // Initialize pointers
+        ListNode odd = head;
+        ListNode even = head.next;
+        ListNode evenHead = even; // Save the head of the even list
+
+        // Traverse and rearrange nodes
+        while (even != null && even.next != null) {
+            odd.next = even.next; // Link odd nodes
+            odd = odd.next;
+
+            even.next = odd.next; // Link even nodes
+            even = even.next;
+        }
+
+        // Connect the odd list to the even list
+        odd.next = evenHead;
+
+        return head;
+    }
 
     public static void printList(ListNode head) {
         ListNode temp = head;
@@ -109,6 +158,26 @@ public class LinkedList {
 
         System.out.println("List after deleting the middle node:");
         printList(head);
+
+
+
+        /// Odd even
+
+        // Example 1: [1,2,3,4,5]
+        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        System.out.println("Original List:");
+        printList(head1);
+        ListNode result1 = solution.oddEvenList(head1);
+        System.out.println("Reordered List:");
+        printList(result1);
+
+        // Example 2: [2,1,3,5,6,4,7]
+        ListNode head2 = new ListNode(2, new ListNode(1, new ListNode(3, new ListNode(5, new ListNode(6, new ListNode(4, new ListNode(7)))))));
+        System.out.println("Original List:");
+        printList(head2);
+        ListNode result2 = solution.oddEvenList(head2);
+        System.out.println("Reordered List:");
+        printList(result2);
     }
 
 }
