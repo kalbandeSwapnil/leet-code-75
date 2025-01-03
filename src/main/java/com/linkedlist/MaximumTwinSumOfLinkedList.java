@@ -1,5 +1,7 @@
 package com.linkedlist;
 
+import java.util.LinkedList;
+
 /*
 2130. Maximum Twin Sum of a Linked List
 
