@@ -1,4 +1,4 @@
-package com.twopointer;
+package com.pattern.twopointer.twopointer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +39,10 @@ Constraints:
  */
 public class Sum3 {
 
+    /*
+    Time Complexity: O(n^2)
+    Space Complexity: O(1)
+     */
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);

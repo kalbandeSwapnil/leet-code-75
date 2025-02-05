@@ -1,4 +1,4 @@
-package com.twopointer;
+package com.pattern.twopointer.twopointer;
 
 /*
 11. Container With Most Water
@@ -14,6 +14,11 @@ Given n non-negative integers a1, a2, ..., an , where each represents a point at
 
  */
 public class ContainerWithMostWater {
+
+    /*
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+     */
     public int maxArea(int[] height) {
         int maxArea = 0;
         int low = 0;

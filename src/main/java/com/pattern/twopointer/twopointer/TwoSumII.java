@@ -1,4 +1,4 @@
-package com.twopointer;
+package com.pattern.twopointer.twopointer;
 
 
 /*
@@ -33,6 +33,11 @@ Given an array of integers numbers that is already sorted in non-decreasing orde
 
 public class TwoSumII {
 
+
+    /*
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+     */
     public int[] twoSum(int[] numbers, int target) {
         int low = 0;
         int high = numbers.length - 1;
