@@ -54,4 +54,11 @@ public class HappyNumber {
 
         return sum;
     }
+
+    public static void main(String[] args) {
+        HappyNumber sol = new HappyNumber();
+        System.out.println(sol.isHappy(19)); // Output: true
+        System.out.println(sol.isHappy(2)); // Output: false
+
+    }
 }

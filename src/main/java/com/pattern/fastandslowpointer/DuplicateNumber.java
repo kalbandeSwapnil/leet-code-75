@@ -30,7 +30,7 @@ Constraints:
 nums.length == n + 1
 1 <= nums[i] <= n
 All the integers in nums appear only once except for precisely one integer which appears two or more times.
- 
+
  */
 public class DuplicateNumber {
 
@@ -51,5 +51,12 @@ public class DuplicateNumber {
         }
 
         return slow;
+    }
+
+    public static void main(String[] args) {
+        DuplicateNumber sol = new DuplicateNumber();
+        System.out.println(sol.findDuplicate(new int[]{1, 3, 4, 2, 2})); // Output: 2
+        System.out.println(sol.findDuplicate(new int[]{3, 1, 3, 4, 2})); // Output: 3
+        System.out.println(sol.findDuplicate(new int[]{3, 3, 3, 3, 3})); // Output: 3
     }
 }
