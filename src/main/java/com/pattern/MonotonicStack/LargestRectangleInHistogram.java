@@ -52,7 +52,12 @@ public class LargestRectangleInHistogram {
             int area = heights[i] * (right[i] - left[i] - 1);
             maxArea = Math.max(maxArea, area);
         }
-
         return maxArea;
+    }
+
+    public static void main(String[] args) {
+        LargestRectangleInHistogram obj = new LargestRectangleInHistogram();
+        System.out.println(obj.largestRectangleArea(new int[]{2,1,5,6,2,3}));
+
     }
 }
